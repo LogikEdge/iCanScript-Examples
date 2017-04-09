@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace iCanScriptExamples.BreakOut {
 
@@ -82,7 +83,8 @@ namespace iCanScriptExamples.BreakOut {
         /// Reloads the level after a game over has been declared.
         public void Reset() {
             Time.timeScale= 1f;
-            Application.LoadLevel(Application.loadedLevel);
+            var theGetActiveScene= SceneManager.GetActiveScene();
+            SceneManager.LoadScene(theGetActiveScene.buildIndex);
         }
 
         // -------------------------------------------------------------
